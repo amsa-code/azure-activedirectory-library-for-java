@@ -51,7 +51,7 @@ abstract class AdalCallable<T> implements Callable<T> {
                 callback.onSuccess(result);
             }
         } catch (final Exception ex) {
-            context.log.error(LogHelper.createMessage("Execution of " + this.getClass() + " failed.",
+            context.log.warn(LogHelper.createMessage("Execution of " + this.getClass() + " failed.",
                     this.headers.getHeaderCorrelationIdValue()), ex);
             if (callback != null) {
                 callback.onFailure(ex);
